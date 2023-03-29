@@ -1,0 +1,10 @@
+context: ../../../../fpga/magic/hardpico_test/ctx.pkl
+compiler: iverilog
+app:
+    name: addertest
+    sources:
+        - ../../src/addertest.v
+constraints:
+    io: io.partial
+
+    

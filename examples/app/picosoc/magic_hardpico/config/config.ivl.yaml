@@ -1,0 +1,14 @@
+context: ../../../../fpga/magic/hardpico/ctx.pkl
+compiler: iverilog
+app:
+     name: picosoc
+    sources:
+        - ../../src/simpleuart.v
+        - ../../src/spimemio.v
+        - ../../src/picosoc.v
+    constraints:
+    io: io.partial
+tests:
+    basic:
+        sources:
+            - ../../src/picosoc_test_basic.v

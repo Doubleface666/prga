@@ -1,0 +1,8 @@
+context: ../../../../fpga/magic/hardpico_test/ctx.pkl
+compiler: vcs
+app:
+    name: dffntest
+    sources:
+        - ../../src/dffntest.v
+constraints:
+    io: io.partial

@@ -1,0 +1,8 @@
+context: ../../../../fpga/magic/hardpico/ctx.pkl
+compiler: vcs
+app:
+    name: addertest
+    sources:
+        - ../../src/addertest.v
+constraints:
+    io: io.partial

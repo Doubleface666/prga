@@ -264,7 +264,7 @@ advanced = builder.fill( pattern ).auto_connect().commit()
 # ============================================================================
 # -- Fabric ------------------------------------------------------------------
 # ============================================================================
-builder = ctx.build_array('top', 18, 18, set_as_top = True)
+builder = ctx.build_array('top', 38, 38, set_as_top = True)
 for x, y in product(range(builder.width), range(builder.height)):
     if x in (0, builder.width - 1) and y in (0, builder.height - 1):
         pass
@@ -276,17 +276,20 @@ for x, y in product(range(builder.width), range(builder.height)):
         builder.instantiate(iotiles[Orientation.south], (x, y))
     elif y == builder.height - 1:
         builder.instantiate(iotiles[Orientation.north], (x, y))
-    elif x == 5 and y == 5:
+    elif x == 13 and y == 13:
         builder.instantiate(picotile, (x, y))
-    elif x == 1:
+    elif x == 1 or x == 5 or x ==9:
         if y % 4 == 1:
             builder.instantiate(basic, (x, y))
-    elif x in (5, 9):
-        if y in (1, 13):
+    elif x ==13 or x== 17:
+        if (y % 4 == 1)and y!=13 and y!=17:
             builder.instantiate(basic, (x, y))
-    elif x == 13:
+    elif x == 21 or x ==25 or x==29 :
         if y % 4 == 1:
             builder.instantiate(advanced, (x, y))
+    elif x ==33:
+        if y % 4 == 1:
+            builder.instantiate(basic, (x, y))
 top = builder.fill( pattern ).auto_connect().commit()
 
 # ============================================================================

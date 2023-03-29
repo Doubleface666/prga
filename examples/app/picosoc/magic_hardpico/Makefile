@@ -10,4 +10,4 @@ $(CONFIG_POSTPROCESS): $(CONFIG)
 	s=`yosys-config --datdir` && sed "s/%YOSYS_DATDIR%/$${s//\//\\/}/g" $< > $@
 
 clean:
-	rm -rf $(PROJECTS) $(CONFIG_POSTPROCESS)
+	rm -rf $(PROJECTS) $(CONFIG_POSTPROCESS)	
